@@ -4,8 +4,6 @@ import GetPokemonStats from "./getPokemonStats"
 
 class PokemonDetails extends Component {
 
-
-
   constructor(props) {
     super(props)
     this.state = {
@@ -15,11 +13,12 @@ class PokemonDetails extends Component {
   }
 
 
-
   renderImg(){ 
     let path = "https://raw.githubusercontent.com/PokeAPI/pokeapi/master/data/Pokemon_XY_Sprites/"+this.props.pokemonId+".png";
     return <img src={path}/>
   }
+
+
 
   render() {
    
@@ -27,7 +26,7 @@ class PokemonDetails extends Component {
       <div className="App">
        <h1>{this.props.pokemonName}</h1>
         {this.renderImg()}
-        <GetPokemonStats pokemonId= {this.props.pokemonId}/>
+        <GetPokemonStats pokemonId= {this.props.pokemonId} pokemonDetails={this.props.pokemonDetails}/>
       </div>
     )
   }
